@@ -1,6 +1,0 @@
-{
-  "name": "AgriCom+ — Farm-to-Door Produce Marketplace",
-  "description": "Mobile-first produce marketplace connecting Kumasi buyers directly with local farmers with QR batch traceability and farm-to-door delivery.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
