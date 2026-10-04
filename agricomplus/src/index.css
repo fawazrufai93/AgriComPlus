@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* AgriCom+ design tokens: Kumasi market palette
+   green = forest leaf, palm = red palm oil, gold = kente yellow */
+:root {
+  --green: #0E3B2B;
+  --green-hover: #0A2D20;
+  --leaf: #1F7A4D;
+  --palm: #D7401B;
+  --palm-hover: #B93417;
+  --gold: #F0B323;
+  --shell: #F4F7F2;
+  --ink: #12201A;
+  --primary: var(--green);
+  --primary-secondary: var(--leaf);
+  --accent: var(--palm);
+  --bg-page: var(--shell);
+}
+
+@layer base {
+  body {
+    font-family: 'Figtree', system-ui, -apple-system, sans-serif;
+    background-color: var(--shell);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Bricolage Grotesque', 'Figtree', sans-serif;
+    letter-spacing: -0.015em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+/* Signature element: woven kente-style band */
+.kente {
+  height: 7px;
+  background: repeating-linear-gradient(90deg,
+    var(--gold) 0 14px, var(--palm) 14px 22px, var(--green) 22px 36px,
+    var(--ink) 36px 40px, var(--gold) 40px 46px, var(--leaf) 46px 60px);
+}
+
+/* Re-theme every existing hard-coded brand colour in one place.
+   (Unlayered CSS wins over Tailwind's utility layer.) */
+.text-\[\#234D33\] { color: var(--green); }
+.bg-\[\#234D33\] { background-color: var(--green); }
+.border-\[\#234D33\] { border-color: var(--green); }
+.ring-\[\#234D33\] { --tw-ring-color: var(--green); }
+.text-\[\#3A7D44\] { color: var(--leaf); }
+.bg-\[\#3A7D44\] { background-color: var(--leaf); }
+.bg-\[\#E8622C\] { background-color: var(--palm); }
+.text-\[\#E8622C\] { color: var(--palm); }
+.bg-\[\#1b3d28\], .hover\:bg-\[\#1b3d28\]:hover { background-color: var(--green-hover); }
+.bg-\[\#d05322\], .bg-\[\#d45523\],
+.hover\:bg-\[\#d05322\]:hover, .hover\:bg-\[\#d45523\]:hover { background-color: var(--palm-hover); }
+.bg-\[\#F6F8F6\] { background-color: var(--shell); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
